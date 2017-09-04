@@ -13,19 +13,24 @@ void PrintResults(string& s1, string& s2, JaroObj& _IJaroIns)
     float timeTakenJW = float( clock () - begin_timeJ ) /  CLOCKS_PER_SEC;
 
     cout
-        << "Example " << ++exampleCount << ": "
-        << s1 << " vs " << s2 << endl
+        << fixed << s1 << " | " << s2 << endl
         << "  Jaro distance:         " << jaroDis << endl
-        << "Took: " << timeTakenJ << " seconds" << endl
+        << "Took: " << timeTakenJ*1000 << " milliseconds" << endl
         << "  Jaro Optimized distance: " << jarWrinkDis << endl
-        << "Took: " << timeTakenJW << " seconds" << endl
-        << endl
+        << "Took: " << timeTakenJW*1000 << " milliseconds" << endl
+        << scientific << endl
         ;
 }
 
 int main() {
-	string name1 = "varunsdfsdfasdfasdfasdfasf";
-	string name2 = "abbaaaazzzzzzzaaaaasdfaaaaasadfasfs";
+	//string name1 = "varunsdfsdfasdfasdfasdfasf";
+	//string name2 = "abbaaaazzzzzzzaaaaasdfaaaaasadfasfs";
+	//string name1 = "Chris";
+	//string name2 = "Crhis";
+	//string name1 = "Chris";
+	//string name2 = "Bob";
+	string name1 = "Ramanjuna";
+	string name2 = "Ramjuna";
 
 	JaroObj* JaroIns = new JaroObj();
 	PrintResults(name1, name2, *JaroIns);
